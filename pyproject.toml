@@ -8,8 +8,12 @@ authors = ["none"]
 python = "^3.9"
 fastapi = "^0.75.0"
 SQLAlchemy = "^1.4.32"
+psycopg2-binary = "^2.9.3"
+uvicorn = "^0.17.6"
 
 [tool.poetry.dev-dependencies]
+flake8 = "^4.0.1"
+black = {version = "^22.1.0", allow-prereleases = true}
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
