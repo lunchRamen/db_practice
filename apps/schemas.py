@@ -31,11 +31,12 @@ class VisitInfo(BaseModel):
     visit_black_number: int
     visit_hispanic_number: int
     visit_nonhispanic_number: int
-    # visit_10s_number: int
-    # visit_20s_number: int
-    # visit_30s_number: int
-    # visit_40s_number: int
-    # visit_over50s_number: int
+    visit_below10s_number: int
+    visit_10s_number: int
+    visit_20s_number: int
+    visit_30s_number: int
+    visit_40s_number: int
+    visit_over50s_number: int
 
     class Config:
         orm_mode = True

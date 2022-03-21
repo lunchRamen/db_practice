@@ -125,4 +125,65 @@ def get_visit_info(db: Session):
         .count()
     )
 
+    visit_info.visit_below10s_number = (
+        db.query(Person.year_of_birth)
+        .join(Person, VisitOccurrence.person)
+        .filter(
+            (VisitOccurrence.person_id == Person.person_id)
+            & (2022 - Person.year_of_birth < 10)
+        )
+        .count()
+    )
+
+    visit_info.visit_10s_number = (
+        db.query(Person.year_of_birth)
+        .join(Person, VisitOccurrence.person)
+        .filter(
+            (VisitOccurrence.person_id == Person.person_id)
+            & (2022 - Person.year_of_birth >= 10)
+            & (2022 - Person.year_of_birth < 20)
+        )
+        .count()
+    )
+
+    visit_info.visit_20s_number = (
+        db.query(Person.year_of_birth)
+        .join(Person, VisitOccurrence.person)
+        .filter(
+            (VisitOccurrence.person_id == Person.person_id)
+            & (2022 - Person.year_of_birth >= 20)
+            & (2022 - Person.year_of_birth < 30)
+        )
+        .count()
+    )
+    visit_info.visit_30s_number = (
+        db.query(Person.year_of_birth)
+        .join(Person, VisitOccurrence.person)
+        .filter(
+            (VisitOccurrence.person_id == Person.person_id)
+            & (2022 - Person.year_of_birth >= 30)
+            & (2022 - Person.year_of_birth < 40)
+        )
+        .count()
+    )
+    visit_info.visit_40s_number = (
+        db.query(Person.year_of_birth)
+        .join(Person, VisitOccurrence.person)
+        .filter(
+            (VisitOccurrence.person_id == Person.person_id)
+            & (2022 - Person.year_of_birth >= 40)
+            & (2022 - Person.year_of_birth < 50)
+        )
+        .count()
+    )
+    visit_info.visit_over50s_number = (
+        db.query(Person.year_of_birth)
+        .join(Person, VisitOccurrence.person)
+        .filter(
+            (VisitOccurrence.person_id == Person.person_id)
+            & (2022 - Person.year_of_birth > 50)
+        )
+        .count()
+    )
+
     return visit_info
