@@ -30,6 +30,8 @@ class Concept(Base):
     valid_end_date = Column(DATE)
     invalid_reason = Column(String(1))
 
+    # _person = relationship("Person", back_populates="_concept")
+
 
 class Person(Base):
     __tablename__ = "person"
@@ -52,6 +54,8 @@ class Person(Base):
     race_source_concept_id = Column(Integer)
     ethnicity_source_value = Column(String(50))
     ethnicity_source_concept_id = Column(Integer)
+
+    # _concept = relationship("Concept", back_populates="_person")
 
     gender_concept = relationship("Concept", foreign_keys=[gender_concept_id])
     race_concept = relationship("Concept", foreign_keys=[race_concept_id])

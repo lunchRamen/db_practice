@@ -17,3 +17,8 @@ router = APIRouter(
 @router.get("/patient", response_model=schemas.PatientInfo)
 def search_patient(db: Session = Depends(get_db)):
     return search.get_patient_info(db)
+
+
+@router.get("/visit", response_model=schemas.VisitInfo)
+def search_visit(db: Session = Depends(get_db)):
+    return search.get_visit_info(db)
