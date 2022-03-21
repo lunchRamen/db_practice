@@ -9,4 +9,4 @@
 
 4. uvicorn main:app --reload를 해서 실행한다.
 
-5. http://127.0.0.1:8000/docs에 들아가서 swagger를 확인한다.
+5. http://127.0.0.1:8000/docs 에 들아가서 swagger를 확인한다.
